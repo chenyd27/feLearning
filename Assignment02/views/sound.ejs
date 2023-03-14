@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Simon</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="#" />
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+
+<body>
+    <h1 id="level-title">Press A Key to Start</h1>
+    <h2 class="explain">Find the flashed block</h2>
+    <div class="return-box hidden" id="button-box">
+        <form action="/sound" method="post">
+            <input type="hidden" name="message" id="message-input">
+            <button type="submit" id="submit" class="return">Return to Main</button>
+        </form>
+    </div>
+    <div class="container" id="container">
+        <div class="row">
+            <div type="button" id="green" class="btn-box green">
+            </div>
+            <div type="button" id="red" class="btn-box red">
+            </div>
+        </div>
+        <div class="row">
+            <div type="button" id="yellow" class="btn-box yellow">
+            </div>
+            <div type="button" id="blue" class="btn-box blue">
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="js/sound.js" charset="utf-8"></script>
+</body>
+
+</html>

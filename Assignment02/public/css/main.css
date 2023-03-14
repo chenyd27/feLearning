@@ -1,0 +1,60 @@
+#body {
+    text-align: center;
+    background-color: #B4E4FF;
+}
+
+#title {
+    font-family: 'Press Start 2P', cursive;
+    margin: 2% 0%;
+}
+
+#explain {
+    margin: 2% 0%;
+}
+
+#container {
+    margin: 2%;
+}
+
+#information {
+    font-family: 'Press Start 2P', cursive;
+}
+
+#topic {
+    margin: 2%;
+    font-family: Audiowide;
+}
+
+#list {
+    font-family: Audiowide;
+}
+
+.warning {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 35%;
+    top: 20%;
+    background-color: #F7C8E0;
+    width: 30%;
+    height: 150px;
+    border-radius: 10px;
+    border: 5px solid black;
+}
+
+.input-box {
+    border-radius: 15px;
+    width: 30%;
+    height: 50px;
+    margin-right: 2%;
+}
+
+.hidden {
+    display: none;
+}
+
+.warning-box {
+    font-family: 'Press Start 2P', cursive;
+    margin-bottom: 10%;
+}
