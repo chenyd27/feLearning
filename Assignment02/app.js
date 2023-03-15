@@ -18,7 +18,7 @@ app.listen(process.env.PORT || 3000, function() {
 });
 
 app.get("/sound", function(req, res) {
-    res.render("sound");
+    res.render("sound", { data: userList[userList.length - 1] });
 })
 
 app.get("/", function(req, res) {
@@ -27,7 +27,8 @@ app.get("/", function(req, res) {
 })
 
 app.post("/sound", function(req, res) {
-    scoreList.push(req.body.message);
+    let person = JSON.parse(req.body.message);
+    scoreList.push(person);
     dateList.push(date.getDate());
     res.redirect("/");
 })
@@ -52,18 +53,12 @@ app.post("/return", function(req, res) {
 function sort() {
     var flag = false;
     var len = scoreList.length;
-    if (userList.length > scoreList.length) {
-        userList.splice(userList.length - 1, 1); // if quit illegal, remove the last user
-    }
     for (let i = 0; i < scoreList.length; i++) {
         for (let j = 0; j < len - 1; j++) {
-            if (parseFloat(scoreList[j]) > parseFloat(scoreList[j + 1])) {
+            if (parseFloat(scoreList[j].time) > parseFloat(scoreList[j + 1].time)) {
                 let tmp = scoreList[j];
                 scoreList[j] = scoreList[j + 1];
                 scoreList[j + 1] = tmp;
-                tmp = userList[j];
-                userList[j] = userList[j + 1];
-                userList[j + 1] = tmp;
                 tmp = dateList[j];
                 dateList[j] = dateList[j + 1];
                 dateList[j + 1] = tmp;

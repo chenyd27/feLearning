@@ -29,11 +29,11 @@
     <div id="container">
         <div id="list">
             <div>
-                <% for(var i = 0;i < userList.length;i++){ %>
+                <% for(var i = 0;i < scoreList.length;i++){ %>
                     <p>
                         <%= i + 1 %> -
-                            <%= userList[i] %> -
-                                <%= scoreList[i] %> s -
+                            <%= scoreList[i].userName%> -
+                                <%= scoreList[i].time %> s -
                                     <%= dateList[i] %>
                     </p>
                     <%} %>

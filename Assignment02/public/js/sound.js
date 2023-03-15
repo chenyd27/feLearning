@@ -5,6 +5,8 @@ var level = 0;
 var startTime = 0;
 var endTime = 0;
 var timeCost = 0;
+var userName = $("#data").text();
+userName = userName.replace(/^\s+|\s+$/g, '');
 
 $("#green").on("click", function(e) {
     musicOn("green");
@@ -52,7 +54,11 @@ function nextSequence() {
             $("h1").text("Congraduation! You finish the game; The time cose is " + (timeCost / 1000) + " seconds");
             // 将值设置到表单域中
             var input = document.getElementById('message-input');
-            input.value = (timeCost / 1000);
+            let person = {
+                time: (timeCost / 1000),
+                userName: userName
+            };
+            input.value = JSON.stringify(person);
             level = 0;
             startTime = 0;
             $("#button-box").removeClass("hidden");
