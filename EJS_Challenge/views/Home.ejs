@@ -1,0 +1,24 @@
+<%- include("partial/Header") -%>
+
+
+    <body>
+        <div class="container">
+            <h1>New Project</h1>
+            <p>
+                <%= homeStartingContent %>
+            </p>
+            <div id="text">
+                <% for(var i = 0;i < textList.length;i++){ %>
+                    <h2>
+                        <%= textList[i].title %>
+                    </h2>
+                    <p>
+                        <%= textList[i].post.substring(0,20) + " ..." %>
+                            <a href="/detail/<%= i %>">read more</a>
+                    </p>
+                    <% } %>
+            </div>
+        </div>
+    </body>
+
+    <%- include("partial/Footer") -%>
