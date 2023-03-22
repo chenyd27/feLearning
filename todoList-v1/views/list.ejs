@@ -9,9 +9,15 @@
         <div id="list">
             <div>
                 <% for(var i = 0;i < newItem.length;i++){ %>
-                    <p>
-                        <%= newItem[i] %>
-                    </p>
+                    <form action="/delete" method="post">
+                        <div class="item">
+                            <input type="checkbox" style="margin-left: 20px; margin-right: 20px;" name="checkbox" value="<%= newItem[i].id%>" onChange="this.form.submit()">
+                            <div>
+                                <%= newItem[i].content %>
+                            </div>
+                            <input type="hidden" name="type" value="<%= currentDay %>" />
+                        </div>
+                    </form>
                     <%} %>
             </div>
         </div>
